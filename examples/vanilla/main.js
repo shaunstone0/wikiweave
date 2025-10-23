@@ -11,6 +11,7 @@ const editor = new MarkdownEditor(container, {
       '# Welcome to WikiWeave\n\nStart typing to see the preview update in real-time!\n\n## Features\n\n- **Bold** and *italic* text\n- Code blocks\n- Lists\n- And more...',
     placeholder: 'Start writing your markdown here...',
   },
+  parser: {},
 });
 
 // For debugging - expose editor to console

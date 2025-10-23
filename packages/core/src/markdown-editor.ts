@@ -1,7 +1,7 @@
-import MarkdownIt from 'markdown-it';
 import { DomBuilder } from './dom-builder';
 import { sanitizeHtml, debounce } from './utils';
 import type { MarkdownEditorOptions } from './types';
+import { Parser } from './parser';
 
 export class MarkdownEditor {
   private container: HTMLElement;
@@ -10,7 +10,7 @@ export class MarkdownEditor {
 
   private preview: HTMLElement;
 
-  private parser: MarkdownIt;
+  private parser: Parser;
 
   public constructor(container: HTMLElement, options?: MarkdownEditorOptions) {
     if (!container) {
@@ -29,7 +29,7 @@ export class MarkdownEditor {
     this.preview = structure.preview;
 
     // Initialize markdown parser
-    this.parser = new MarkdownIt();
+    this.parser = new Parser(options?.parser);
 
     // Attach to DOM
     this.container.appendChild(structure.container);

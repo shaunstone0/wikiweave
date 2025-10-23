@@ -6,6 +6,7 @@
     "moduleResolution": "bundler",
 
     "strict": true,
+    "strictPropertyInitialization": false,
     "noUnusedLocals": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
