@@ -42,7 +42,7 @@ export class Parser {
    * parser.parse('# Hello') // '<h1>Hello</h1>'
    * parser.parse('**bold**') // '<p><strong>bold</strong></p>'
    */
-  public render(markdown: string): string {
+  public parse(markdown: string): string {
     // Validate input
 
     if (markdown === null || markdown === undefined) {

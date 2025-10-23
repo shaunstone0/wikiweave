@@ -62,7 +62,7 @@ export class MarkdownEditor {
 
   private updatePreview(): void {
     const markdown = this.textarea.value;
-    const html = this.parser.render(markdown);
+    const html = this.parser.parse(markdown);
     const safeHtml = sanitizeHtml(html);
     this.preview.innerHTML = safeHtml;
   }
