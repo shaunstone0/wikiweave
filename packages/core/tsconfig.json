@@ -5,8 +5,9 @@
     "rootDir": "./src",
 
     "composite": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "declarationDir": "./dist"
   },
-  "include": ["src/**/*"],
+  "include": ["src"],
   "exclude": ["src/**/*.spec.ts", "node_modules", "dist"]
 }

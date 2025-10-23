@@ -28,6 +28,7 @@ module.exports = {
       },
       rules: {
         // Airbnb prefers default exports, but named exports are often better for libraries
+        'import/no-relative-packages': 'off',
         'import/prefer-default-export': 'off',
         'no-useless-constructor': 'off',
         'no-empty-function': 'off',
@@ -58,6 +59,24 @@ module.exports = {
         ecmaVersion: 'latest',
       },
       extends: ['airbnb-base', 'prettier'],
+    },
+    {
+      // Example/demo JavaScript files - allow relative package imports
+      files: ['examples/**/*.js'],
+      env: {
+        browser: true,
+        es2021: true,
+      },
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+      },
+      extends: ['airbnb-base', 'prettier'],
+      rules: {
+        'import/no-relative-packages': 'off',
+        'import/no-unresolved': 'off',
+        'import/extensions': 'off',
+      },
     },
   ],
 };
