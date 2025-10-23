@@ -1,0 +1,26 @@
+# Build outputs
+dist/
+coverage/
+.angular/
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Lock files (don't format these)
+package-lock.json
+pnpm-lock.yaml
+
+# Generated files
+*.min.js
+*.min.css

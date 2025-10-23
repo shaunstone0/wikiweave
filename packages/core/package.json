@@ -1,0 +1,45 @@
+{
+  "name": "@wikiweave/core",
+  "version": "0.1.0",
+  "description": "Vanilla JavaScript markdown editor with wiki-style linking",
+  "sideEffects": false,
+  "keywords": [
+    "markdown",
+    "editor",
+    "wiki",
+    "wysiwyg"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "test": "jest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dompurify": "^3.2.2",
+    "markdown-it": "^14.1.0"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "tsup": "^8.3.5"
+  }
+}

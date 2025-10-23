@@ -1,0 +1,55 @@
+{
+  "name": "wikiweave",
+  "version": "1.0.0",
+  "author": "",
+  "private": true,
+  "scripts": {
+    "build": "npm run build -w @wikiweave/core",
+    "build:core": "npm run build -w @wikiweave/core",
+    "dev": "concurrently \"npm run dev -w @wikiweave/core\" \"npm run start -w @wikiweave/angular\"",
+    "dev:core": "npm run dev -w @wikiweave/core",
+    "test": "jest",
+    "test:core": "npm run test -w @wikiweave/core",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "clean": "rm -rf node_modules packages/*/node_modules packages/*/dist",
+    "prepare": "husky"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.6.2",
+    "@typescript-eslint/eslint-plugin": "^8.45.0",
+    "@typescript-eslint/parser": "^8.45.0",
+    "concurrently": "^9.2.1",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "husky": "^9.1.7",
+    "jest": "^30.2.0",
+    "lint-staged": "^16.2.3",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.4",
+    "typescript": "^5.9.3"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  }
+}
