@@ -12,7 +12,9 @@
   "author": "",
   "license": "MIT",
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/yourusername/wikiweave.git",
+    "directory": "packages/core"
   },
   "type": "module",
   "main": "./dist/index.js",
