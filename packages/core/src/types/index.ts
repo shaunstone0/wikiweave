@@ -24,6 +24,7 @@ export type {
   AutocompleteOptions,
   ImageOptions,
   CallbackOptions,
+  ParserOptions,
 } from './config';
 
 // Event callback types

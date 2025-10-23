@@ -627,4 +627,83 @@ export interface MarkdownEditorOptions {
    * className: 'my-editor dark-theme'
    */
   className?: string;
+  parser?: ParserOptions;
+}
+
+/**
+ * Configuration for the markdown parser.
+ *
+ * Controls how markdown is rendered and handles custom wiki link syntax.
+ * These options are passed to markdown-it and custom plugins.
+ */
+export interface ParserOptions {
+  /**
+   * Allow raw HTML in markdown content.
+   *
+   * Security consideration: Enabling this allows users to inject HTML.
+   * DOMPurify sanitization still runs, but be cautious in untrusted environments.
+   *
+   * @default false
+   */
+  html?: boolean;
+
+  /**
+   * Automatically convert URLs to clickable links.
+   *
+   * When true: http://example.com becomes <a href="...">
+   * When false: URLs remain as plain text
+   *
+   * @default true
+   */
+  linkify?: boolean;
+
+  /**
+   * Enable typographic replacements.
+   *
+   * Converts:
+   * - (c) → ©
+   * - (tm) → ™
+   * - ... → …
+   * - -- → –
+   * - --- → —
+   * - "quotes" → "smart quotes"
+   *
+   * @default true
+   */
+  typographer?: boolean;
+
+  /**
+   * Convert newlines to <br> tags.
+   *
+   * When true: Single newlines become line breaks (GitHub-style)
+   * When false: Need double newline for paragraph break
+   *
+   * @default false
+   */
+  breaks?: boolean;
+
+  /**
+   * Custom wiki link rendering options.
+   *
+   * Controls CSS classes and href generation for [[wiki links]].
+   */
+  wikiLinks?: {
+    /**
+     * CSS class added to wiki link <a> elements.
+     *
+     * @default 'wiki-link'
+     */
+    className?: string;
+
+    /**
+     * Optional function to generate href attributes.
+     *
+     * If provided: Links have real hrefs like href="/wiki/PageName"
+     * If omitted: Links have href="#" and rely on click handlers
+     *
+     * @example
+     * generateHref: (target) => `/wiki/${target}`
+     */
+    generateHref?: (target: string) => string;
+  };
 }
